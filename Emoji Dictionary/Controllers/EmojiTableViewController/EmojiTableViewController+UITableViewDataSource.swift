@@ -27,6 +27,5 @@ extension EmojiTableViewController/*: UITableViewDataSource*/ {
         cell.symbolLabel.text = emoji.symbol
         cell.nameLabel.text = emoji.name
         cell.descriptionLabel.text = emoji.description
-        
     }
 }

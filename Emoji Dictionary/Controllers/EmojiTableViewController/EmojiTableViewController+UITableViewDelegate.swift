@@ -9,34 +9,32 @@
 import UIKit
 
 extension EmojiTableViewController/*: UITableViewDelegate*/ {
-    // MARK: - ... Method edit cells
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return insertMode ? .insert : .delete
-    }
-    // MARK: - ... Method switch editing style
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .insert:
-            let emoji = emojis[indexPath.row]
-            emojis.insert(emoji, at: indexPath.row)
-            tableView.insertRows(at: [indexPath], with: .top)
-        case .delete:
-            emojis.remove(at: indexPath.row)
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "𝘿𝙀𝙇𝙀𝙏𝙀") {
+            (action, indexPath) in
+            self.emojis.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        case .none:
-            break
         }
+        
+        let insert = UITableViewRowAction(style: .normal, title: "𝙄𝙉𝙎𝙀𝙍𝙏") {
+            (action, indexPath) in
+            let emoji = self.emojis[indexPath.row]
+            self.emojis.insert(emoji, at: indexPath.row)
+            tableView.insertRows(at: [indexPath], with: .top)
+        }
+        
+        delete.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        insert.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        
+        return [delete, insert]
     }
-    // MARK: - ... Method - mooving cells
+    
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         let movedEmoji = emojis.remove(at: sourceIndexPath.row)
         emojis.insert(movedEmoji, at: destinationIndexPath.row)
         tableView.reloadData()
-    }
-    // MARK: - ... Method - set editing style (.delete or .insert)
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        if !editing { insertMode.toggle() }
     }
 }

@@ -10,14 +10,24 @@ import UIKit
 
 class EmojiTableViewController: UITableViewController {
 
-    var emojis = [Emoji]()
+    var emojis = [Emoji]() {
+        didSet {
+            EmojiStorage.shared.save(emojis: emojis)
+        }
+    }
+    
     var insertMode = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emojis = Emoji.load()
-        startUI()
         
+        if let emojis = EmojiStorage.shared.load() {
+            self.emojis = emojis
+        } else {
+            emojis = Emoji.loadDefaultValues()
+        }
+        
+        startUI()
     }
     
     func startUI() {

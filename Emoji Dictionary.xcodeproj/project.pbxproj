@@ -18,6 +18,7 @@
 		746F6114221EBFB7009C4AA8 /* EmojiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F6113221EBFB7009C4AA8 /* EmojiTableViewCell.swift */; };
 		746F6117221F20DD009C4AA8 /* EmojiDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F6116221F20DD009C4AA8 /* EmojiDetailTableViewController.swift */; };
 		746F6119221F2E65009C4AA8 /* UITextField+textValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746F6118221F2E65009C4AA8 /* UITextField+textValue.swift */; };
+		74F92E42221FF59E009E1C04 /* EmojiStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F92E41221FF59E009E1C04 /* EmojiStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		746F6113221EBFB7009C4AA8 /* EmojiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTableViewCell.swift; sourceTree = "<group>"; };
 		746F6116221F20DD009C4AA8 /* EmojiDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiDetailTableViewController.swift; sourceTree = "<group>"; };
 		746F6118221F2E65009C4AA8 /* UITextField+textValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+textValue.swift"; sourceTree = "<group>"; };
+		74F92E41221FF59E009E1C04 /* EmojiStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				746F6106221EA7CE009C4AA8 /* Emoji.swift */,
 				746F6118221F2E65009C4AA8 /* UITextField+textValue.swift */,
+				74F92E41221FF59E009E1C04 /* EmojiStorage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				746F6119221F2E65009C4AA8 /* UITextField+textValue.swift in Sources */,
 				746F610F221EAE20009C4AA8 /* EmojiTableViewController+UITableViewDataSource.swift in Sources */,
 				746F6117221F20DD009C4AA8 /* EmojiDetailTableViewController.swift in Sources */,
+				74F92E42221FF59E009E1C04 /* EmojiStorage.swift in Sources */,
 				746F610D221EACC1009C4AA8 /* EmojiTableViewController.swift in Sources */,
 				746F6114221EBFB7009C4AA8 /* EmojiTableViewCell.swift in Sources */,
 				746F60F5221EA782009C4AA8 /* AppDelegate.swift in Sources */,

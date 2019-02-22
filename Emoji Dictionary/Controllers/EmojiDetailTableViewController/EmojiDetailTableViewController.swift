@@ -46,11 +46,9 @@ class EmojiDetailTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         emoji = Emoji(symbol: symbolTextField.textValue, name: nameTextField.textValue, description: descriptionTextField.textValue, usage: usageTextField.textValue)
-        print(#function)
     }
     
     @IBAction func textFieldChanged() {
        updateButtonVisibility()
     }
-
 }
