@@ -30,10 +30,10 @@ class EmojiStorage {
     
     func load() -> [Emoji]? {
         guard let data = try? Data(contentsOf: archiveURL) else { return nil }
-        
+
         let decoder = PropertyListDecoder()
         let decodedEmojis = try? decoder.decode([Emoji].self, from: data)
-        
+
         return decodedEmojis
     }
     
